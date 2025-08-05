@@ -2,79 +2,187 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Panel Admin TMDb + Blogger</title>
+  <title>Panel Admin InkaFlixLat Movie</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
   <style>
-    body {
-      background: #121212;
-      color: #eee;
-      font-family: Arial, sans-serif;
-      padding: 1rem;
-    }
-    input, textarea, button {
-      width: 100%;
-      margin: 0.5rem 0;
-      padding: 0.5rem;
-      border-radius: 5px;
-      border: none;
-      font-size: 1rem;
-    }
-    textarea {
-      height: 200px;
-      font-family: monospace;
-      background: #222;
-      color: #ddd;
-      resize: vertical;
-    }
-    button {
-      background-color: #2196f3;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #1976d2;
-    }
-    .hidden {
-      display: none;
-    }
-    label {
-      margin-top: 1rem;
-      display: block;
-      font-weight: bold;
-    }
+    /* RESET */
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+/* BODY Y FONDO */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #fff;
+  padding: 20px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+header h1 {
+  font-size: 2rem;
+  color: #3a8ee6; /* azul */
+  text-shadow: 0 0 8px #3a8ee6a1;
+}
+
+/* MAIN CONTENEDOR */
+main {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* SECCIONES FORM Y PREVIEW */
+.form-section, .preview-section {
+  background-color: #1e1e1e;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #3a8ee64d;
+}
+
+/* LABELS */
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: #3a8ee6;
+  font-size: 1rem;
+}
+
+/* INPUTS Y TEXTAREAS */
+input[type="text"], textarea {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #2b2b2b;
+  border: 1.5px solid #3a8ee6;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #3a8ee6;
+  font-family: monospace;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, textarea:focus {
+  border-color: #2f7ee6;
+  box-shadow: 0 0 8px #2f7ee6cc;
+  color: #2f7ee6;
+  background-color: #232323;
+}
+
+textarea {
+  height: 180px;
+  resize: vertical;
+  line-height: 1.4;
+}
+
+/* BOTONES */
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px;
+  background-color: #3a8ee6;
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 12px #3a8ee6bb;
+}
+
+button:hover {
+  background-color: #2f7ee6;
+  box-shadow: 0 0 16px #2f7ee6cc;
+}
+
+/* OCULTAR ELEMENTOS */
+.hidden {
+  display: none !important;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+footer button {
+  width: auto;
+  padding: 12px 28px;
+  font-size: 1rem;
+  box-shadow: 0 0 12px #3a8ee6bb;
+}
+
+footer button:hover {
+  box-shadow: 0 0 16px #2f7ee6cc;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  main {
+    padding: 0 10px;
+  }
+}
   </style>
 </head>
 <body>
-  <h1>Panel Admin TMDb + Blogger</h1>
 
-  <!-- Login/Logout -->
-  <div id="login" style="margin-bottom: 1rem;">
-    <button id="loginButton">Iniciar sesión con Google</button>
-  </div>
-  <button id="logout" class="hidden">Cerrar sesión</button>
+  <header>
+    <h1>Panel Admin InkaFlixLat Movie</h1>
+  </header>
 
-  <!-- Inputs para buscar película y Custom ID -->
-  <label for="searchInput">Buscar película por título o ID TMDb:</label>
-  <input type="text" id="searchInput" placeholder="Ejemplo: 550 o Fight Club" />
-  <button id="searchButton">Buscar película</button>
+  <main>
+    <section class="form-section">
+      <label for="searchInput">Buscar película por título o ID TMDb:</label>
+      <input type="text" id="searchInput" placeholder="Ejemplo: 550 o Fight Club" />
+      <button id="searchButton">Buscar película</button>
 
-  <label for="customIdInput">Custom ID para URL streaming (ejemplo: 6395779005522593699):</label>
-  <input type="text" id="customIdInput" placeholder="ID para URL de streaming" />
+      <label for="customIdInput">Custom ID para URL streaming:</label>
+      <input type="text" id="customIdInput" placeholder="Ejemplo: 6395779005522593699" />
 
-  <label for="postTitle">Título del post:</label>
-  <input type="text" id="postTitle" placeholder="Título para Blogger" />
+      <label for="postTitle">Título del post:</label>
+      <input type="text" id="postTitle" placeholder="Título para Blogger" />
 
-  <label for="postLabels">Etiquetas (separadas por coma):</label>
-  <input type="text" id="postLabels" placeholder="Ej: Acción, Drama, Thriller" />
+      <label for="postLabels">Etiquetas (separadas por coma):</label>
+      <input type="text" id="postLabels" placeholder="Ej: Acción, Drama, Thriller" />
 
-  <label for="htmlOutput">HTML generado para publicar:</label>
-  <textarea id="htmlOutput" placeholder="Aquí aparecerá el código generado..." readonly></textarea>
+      <label for="blogId">Blog ID de Blogger:</label>
+      <input type="text" id="blogId" value="3812927193244872888" />
+    </section>
 
-  <label for="blogId">Blog ID de Blogger:</label>
-  <input type="text" id="blogId" placeholder="Tu Blog ID" value="3812927193244872888" />
+    <section class="preview-section">
+      <h2>HTML generado:</h2>
+      <textarea id="htmlOutput" placeholder="Aquí aparecerá el código generado..." readonly></textarea>
+      <button id="publishPost">Publicar en Blogger</button>
+    </section>
+  </main>
 
-  <button id="publishPost">Publicar en Blogger</button>
+  <footer>
+    <div id="login">
+      <button id="loginButton">Iniciar sesión con Google</button>
+    </div>
+    <button id="logout" class="hidden">Cerrar sesión</button>
+  </footer>
 
   <!-- Scripts -->
   <script src="p-auth.js"></script>

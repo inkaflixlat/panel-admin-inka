@@ -1,1 +1,159 @@
-const _0x3e7a31=_0x5a67;(function(_0x415ffa,_0x4113a8){const _0x53db37=_0x5a67,_0x58854b=_0x415ffa();while(!![]){try{const _0x18dc93=parseInt(_0x53db37(0x1cb))/0x1+parseInt(_0x53db37(0x1ce))/0x2*(-parseInt(_0x53db37(0x1a9))/0x3)+parseInt(_0x53db37(0x1b1))/0x4*(parseInt(_0x53db37(0x1e6))/0x5)+parseInt(_0x53db37(0x1ed))/0x6+-parseInt(_0x53db37(0x1e0))/0x7*(-parseInt(_0x53db37(0x1e5))/0x8)+parseInt(_0x53db37(0x1aa))/0x9*(-parseInt(_0x53db37(0x1b5))/0xa)+parseInt(_0x53db37(0x1b9))/0xb*(-parseInt(_0x53db37(0x1c3))/0xc);if(_0x18dc93===_0x4113a8)break;else _0x58854b['push'](_0x58854b['shift']());}catch(_0x443443){_0x58854b['push'](_0x58854b['shift']());}}}(_0x2ae4,0xb399c));const apiKey='867b27ebb5a72c3f64ee67bc9dd7a794',imageBase=_0x3e7a31(0x1d6),backdropBase=_0x3e7a31(0x1d1),movieGrid=document[_0x3e7a31(0x1c9)](_0x3e7a31(0x1de)),searchBtn=document[_0x3e7a31(0x1c9)](_0x3e7a31(0x1ec)),searchInput=document['getElementById'](_0x3e7a31(0x1df));let serieCustomId='',serieCustomUrl='';function formatDate(_0x7cd1b8){const _0x57408a=_0x3e7a31;if(!_0x7cd1b8)return'';const _0x2bc13d=new Date(_0x7cd1b8);return _0x2bc13d['toLocaleDateString'](_0x57408a(0x1b7));}function _0x2ae4(){const _0x12fcef=['\x20-\x20','</div>\x0a\x20\x20\x20\x20','\x22\x0a\x20\x20\x20\x20data-season-number=\x22','\x22\x0a\x20\x20\x20\x20data-serie-url=\x22','episodes','</p>\x0a\x20\x20</div>\x0a\x20\x20<a\x20name=\x27more\x27></a>\x0a\x0a\x20\x20<div\x20\x0a\x20\x20\x20\x20data-player-backdrop=\x22','\x0a\x20\x20\x20\x20\x20\x20<img\x20src=\x22','\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20name:\x20\x22Vip\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20quality:\x20\x22HD\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20url:\x20\x22https://streaming.cinedom.pro/api/tv/','13365852spfAGE','episode-option','poster_path','<p>âš ï¸\x20Temporada\x20\x22','json','length','getElementById','appendChild','577408mcZgcA','<p>No\x20se\x20encontraron\x20series.</p>','?api_key=','29502tJneJg','click','customUrlInput','https://image.tmdb.org/t/p/w1280','addEventListener','\x22\x0a\x20\x20\x20\x20data-serie-name=\x22','htmlOutput','className','https://image.tmdb.org/t/p/w500','name','</h3>','then','\x22></div>\x0a\x20\x20<script>\x0a\x20\x20\x20\x20const\x20_SV_LINKS\x20=\x20[\x0a\x20\x20\x20\x20\x20\x20{\x0a\x20\x20\x20\x20\x20\x20\x20\x20lang:\x20\x22','https://api.themoviedb.org/3/tv/','https://api.themoviedb.org/3/search/tv?api_key=','div','movieGrid','searchInput','7jZIyPO','\x0a<!--\x20Episodio:\x20','onclick','/season/','forEach','8790568wBupkA','95RyMMQM','value','<h3>','&language=es-ES&query=','</span>\x0a\x20\x20\x20\x20\x20\x20<span\x20class=\x22num\x22>','seasons','searchButton','8637822hQZCdP','customIdInput','overview','textContent','&language=es-ES','https://via.placeholder.com/300x450?text=Sin+Imagen','results','postTitle','createElement','still_path','\x20-->\x0a<!--\x20id-','\x22>\x0a\x20\x20</div>\x0a\x0a\x20\x20<header\x20class=\x22post-header\x22>\x0a\x20\x20\x20\x20<span\x20class=\x22post-header__title\x22>','42igVbNK','41562uAvytG','episode_number','selectLang','movie-card','\x22\x20alt=\x22','âŒ\x20Guarda\x20un\x20ID\x20y\x20URL\x20antes\x20de\x20generar.','\x22\x20sin\x20episodios\x20aÃºn.</p>','268204gtWKTr','</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label>ID\x20Blogger:</label><br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22customIdInput\x22\x20placeholder=\x22Ej:\x206395779005522593699\x22><br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label>URL\x20Serie:</label><br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22customUrlInput\x22\x20placeholder=\x22Ej:\x20https://miweb.com/serie\x22><br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20onclick=\x22saveCustomData()\x22>Guardar\x20Datos</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20','âœ…\x20Datos\x20guardados','\x22,\x0a\x20\x20\x20\x20\x20\x20\x20\x20tagVideo:\x20false\x0a\x20\x20\x20\x20\x20\x20}\x0a\x20\x20\x20\x20]\x0a\x20\x20</script>\x0a</div>\x0a','230LwpTTg','innerHTML','es-ES','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22data-box\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h3>','33fqZwKP','trim'];_0x2ae4=function(){return _0x12fcef;};return _0x2ae4();}function _0x5a67(_0xb91dbc,_0x3faf9a){const _0x2ae41a=_0x2ae4();return _0x5a67=function(_0x5a6753,_0x1bbaa6){_0x5a6753=_0x5a6753-0x1a7;let _0x3e0803=_0x2ae41a[_0x5a6753];return _0x3e0803;},_0x5a67(_0xb91dbc,_0x3faf9a);}function fetchSeries(_0x50ef09){const _0x2824d3=_0x3e7a31;movieGrid[_0x2824d3(0x1b6)]='<p>Cargando...</p>',fetch(_0x50ef09)[_0x2824d3(0x1d9)](_0x19fea5=>_0x19fea5[_0x2824d3(0x1c7)]())[_0x2824d3(0x1d9)](_0x186028=>{const _0x1091c0=_0x2824d3;displaySeries(_0x186028[_0x1091c0(0x1f3)]);});}function displaySeries(_0x2effd9){const _0xbbd909=_0x3e7a31;movieGrid[_0xbbd909(0x1b6)]='';if(!_0x2effd9||_0x2effd9[_0xbbd909(0x1c8)]===0x0){movieGrid[_0xbbd909(0x1b6)]=_0xbbd909(0x1cc);return;}_0x2effd9[_0xbbd909(0x1e4)](_0x1c7de0=>{const _0x30b506=_0xbbd909,_0x11b242=document[_0x30b506(0x1f5)](_0x30b506(0x1dd));_0x11b242[_0x30b506(0x1d5)]=_0x30b506(0x1ad);const _0x1bdba1=_0x1c7de0[_0x30b506(0x1c5)]?imageBase+_0x1c7de0[_0x30b506(0x1c5)]:_0x30b506(0x1f2);_0x11b242[_0x30b506(0x1b6)]=_0x30b506(0x1c1)+_0x1bdba1+_0x30b506(0x1ae)+_0x1c7de0[_0x30b506(0x1d7)]+'\x22\x20/>\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22title\x22>'+_0x1c7de0[_0x30b506(0x1d7)]+'</div>\x0a\x20\x20\x20\x20\x20\x20<div\x20class=\x22release-date\x22>'+formatDate(_0x1c7de0['first_air_date'])+_0x30b506(0x1bc),_0x11b242[_0x30b506(0x1d2)](_0x30b506(0x1cf),()=>showSeriesDetails(_0x1c7de0['id'],_0x1c7de0[_0x30b506(0x1d7)])),movieGrid[_0x30b506(0x1ca)](_0x11b242);});}function showSeriesDetails(_0x57114d,_0x3b3394){const _0x34aa92=_0x3e7a31,_0x297f19='https://api.themoviedb.org/3/tv/'+_0x57114d+_0x34aa92(0x1cd)+apiKey+_0x34aa92(0x1f1);fetch(_0x297f19)[_0x34aa92(0x1d9)](_0x1d9abc=>_0x1d9abc[_0x34aa92(0x1c7)]())[_0x34aa92(0x1d9)](_0x3022c3=>{const _0x43c016=_0x34aa92;movieGrid['innerHTML']=_0x43c016(0x1b8)+_0x3b3394+_0x43c016(0x1b2),_0x3022c3[_0x43c016(0x1eb)][_0x43c016(0x1e4)](_0x575f07=>{const _0x3f1112=_0x43c016,_0x459581=document[_0x3f1112(0x1f5)](_0x3f1112(0x1dd));_0x459581[_0x3f1112(0x1d5)]='season-option',_0x459581[_0x3f1112(0x1f0)]=_0x575f07[_0x3f1112(0x1d7)]+'\x20('+_0x575f07['episode_count']+'\x20episodios)',_0x459581[_0x3f1112(0x1e2)]=()=>showEpisodes(_0x57114d,_0x575f07['season_number'],_0x3b3394),movieGrid[_0x3f1112(0x1ca)](_0x459581);});});}function saveCustomData(){const _0x5000d5=_0x3e7a31;serieCustomId=document[_0x5000d5(0x1c9)](_0x5000d5(0x1ee))[_0x5000d5(0x1e7)][_0x5000d5(0x1ba)](),serieCustomUrl=document[_0x5000d5(0x1c9)](_0x5000d5(0x1d0))[_0x5000d5(0x1e7)][_0x5000d5(0x1ba)](),alert(_0x5000d5(0x1b3));}function showEpisodes(_0x2cee70,_0x576d69,_0x4abd6f){const _0x109545=_0x3e7a31,_0x2b4e87=_0x109545(0x1db)+_0x2cee70+_0x109545(0x1e3)+_0x576d69+_0x109545(0x1cd)+apiKey+_0x109545(0x1f1);fetch(_0x2b4e87)[_0x109545(0x1d9)](_0xec1902=>_0xec1902[_0x109545(0x1c7)]())['then'](_0x1dbfed=>{const _0x28909f=_0x109545;if(!_0x1dbfed[_0x28909f(0x1bf)]||_0x1dbfed[_0x28909f(0x1bf)][_0x28909f(0x1c8)]===0x0){movieGrid[_0x28909f(0x1b6)]=_0x28909f(0x1c6)+_0x1dbfed[_0x28909f(0x1d7)]+_0x28909f(0x1b0);return;}movieGrid[_0x28909f(0x1b6)]=_0x28909f(0x1e8)+_0x4abd6f+_0x28909f(0x1bb)+_0x1dbfed[_0x28909f(0x1d7)]+_0x28909f(0x1d8),_0x1dbfed[_0x28909f(0x1bf)][_0x28909f(0x1e4)](_0x13b73e=>{const _0x5a460a=_0x28909f,_0x2cb19e=document[_0x5a460a(0x1f5)](_0x5a460a(0x1dd));_0x2cb19e[_0x5a460a(0x1d5)]=_0x5a460a(0x1c4),_0x2cb19e[_0x5a460a(0x1f0)]=_0x13b73e[_0x5a460a(0x1ab)]+'.\x20'+_0x13b73e['name'],_0x2cb19e[_0x5a460a(0x1e2)]=()=>generateEpisodeCode(_0x2cee70,_0x576d69,_0x13b73e[_0x5a460a(0x1ab)],_0x4abd6f,_0x13b73e),movieGrid[_0x5a460a(0x1ca)](_0x2cb19e);});});}function generateEpisodeCode(_0x49f528,_0x7d7433,_0x7dab4a,_0x469f74,_0x3321d5){const _0x1e7732=_0x3e7a31;if(serieCustomId===''||serieCustomUrl===''){alert(_0x1e7732(0x1af));return;}const _0x41c56b=document[_0x1e7732(0x1c9)](_0x1e7732(0x1ac))?.['value']||'lat',_0x5007d6=_0x3321d5[_0x1e7732(0x1f6)]?imageBase+_0x3321d5[_0x1e7732(0x1f6)]:'https://via.placeholder.com/1280x720?text=Sin+Imagen',_0x354849=_0x1e7732(0x1e1)+_0x3321d5[_0x1e7732(0x1d7)]+'\x20-\x20T'+_0x7d7433+'E'+_0x7dab4a+_0x1e7732(0x1a7)+serieCustomId+',Episode\x20-->\x0a<div\x20class=\x27post-body\x27>\x0a\x20\x20<div\x20data-post-type=\x22episode\x22\x20hidden>\x0a\x20\x20\x20\x20<img\x20src=\x22'+_0x5007d6+'\x22\x20/>\x0a\x20\x20\x20\x20<p\x20id=\x22tmdb-synopsis\x22>'+(_0x3321d5[_0x1e7732(0x1ef)]||'Sin\x20descripciÃ³n')+_0x1e7732(0x1c0)+(backdropBase+(_0x3321d5['still_path']||''))+'\x22\x20\x0a\x20\x20\x20\x20data-episode-count=\x22'+_0x3321d5[_0x1e7732(0x1ab)]+_0x1e7732(0x1bd)+_0x7d7433+_0x1e7732(0x1d3)+_0x469f74+_0x1e7732(0x1be)+serieCustomUrl+_0x1e7732(0x1a8)+_0x3321d5[_0x1e7732(0x1d7)]+'</span>\x0a\x20\x20\x20\x20<div\x20class=\x22post-header__meta\x22>\x0a\x20\x20\x20\x20\x20\x20<span\x20class=\x22ssn\x22>'+_0x7d7433+_0x1e7732(0x1ea)+_0x3321d5[_0x1e7732(0x1ab)]+'</span>\x0a\x20\x20\x20\x20</div>\x0a\x20\x20</header>\x0a\x0a\x20\x20<div\x20class=\x22plyer-node\x22\x20data-selected-lang=\x22'+_0x41c56b+_0x1e7732(0x1da)+_0x41c56b+_0x1e7732(0x1c2)+_0x49f528+'/'+_0x7d7433+'/'+_0x7dab4a+_0x1e7732(0x1b4);document[_0x1e7732(0x1c9)](_0x1e7732(0x1d4))['value']=_0x354849,document['getElementById'](_0x1e7732(0x1f4))[_0x1e7732(0x1e7)]=_0x469f74+'\x20T'+_0x7d7433+'E'+_0x7dab4a;}searchBtn[_0x3e7a31(0x1d2)](_0x3e7a31(0x1cf),()=>{const _0x569bc7=_0x3e7a31,_0x55e70b=searchInput[_0x569bc7(0x1e7)][_0x569bc7(0x1ba)]();if(!_0x55e70b)return;const _0x4c3d71=_0x569bc7(0x1dc)+apiKey+_0x569bc7(0x1e9)+encodeURIComponent(_0x55e70b);fetchSeries(_0x4c3d71);});
+const apiKey = "867b27ebb5a72c3f64ee67bc9dd7a794";
+const imageBase = "https://image.tmdb.org/t/p/w500";
+const backdropBase = "https://image.tmdb.org/t/p/w1280";
+
+const movieGrid = document.getElementById("movieGrid");
+const searchBtn = document.getElementById("searchButton");
+const searchInput = document.getElementById("searchInput");
+
+let serieCustomId = "";
+let serieCustomUrl = "";
+
+function formatDate(dateStr) {
+  if (!dateStr) return "";
+  const date = new Date(dateStr);
+  return date.toLocaleDateString("es-ES");
+}
+
+function fetchSeries(url) {
+  movieGrid.innerHTML = "<p>Cargando...</p>";
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      displaySeries(data.results);
+    });
+}
+
+function displaySeries(series) {
+  movieGrid.innerHTML = "";
+  if (!series || series.length === 0) {
+    movieGrid.innerHTML = "<p>No se encontraron series.</p>";
+    return;
+  }
+
+  series.forEach(serie => {
+    const card = document.createElement("div");
+    card.className = "movie-card";
+    const poster = serie.poster_path ? imageBase + serie.poster_path : "https://via.placeholder.com/300x450?text=Sin+Imagen";
+    card.innerHTML = `
+      <img src="${poster}" alt="${serie.name}" />
+      <div class="title">${serie.name}</div>
+      <div class="release-date">${formatDate(serie.first_air_date)}</div>
+    `;
+    card.addEventListener("click", () => showSeriesDetails(serie.id, serie.name));
+    movieGrid.appendChild(card);
+  });
+}
+
+function showSeriesDetails(tvId, serieName) {
+  const url = `https://api.themoviedb.org/3/tv/${tvId}?api_key=${apiKey}&language=es-ES`;
+  fetch(url)
+    .then(res => res.json())
+    .then(series => {
+      movieGrid.innerHTML = `
+        <div class="data-box">
+          <h3>${serieName}</h3>
+          <label>ID Blogger:</label><br>
+          <input type="text" id="customIdInput" placeholder="Ej: 6395779005522593699"><br>
+          <label>URL Serie:</label><br>
+          <input type="text" id="customUrlInput" placeholder="Ej: https://miweb.com/serie"><br>
+          <button onclick="saveCustomData()">Guardar Datos</button>
+        </div>
+      `;
+
+      series.seasons.forEach(season => {
+        const btn = document.createElement("div");
+        btn.className = "season-option";
+        btn.textContent = `${season.name} (${season.episode_count} episodios)`;
+        btn.onclick = () => showEpisodes(tvId, season.season_number, serieName);
+        movieGrid.appendChild(btn);
+      });
+    });
+}
+
+function saveCustomData() {
+  serieCustomId = document.getElementById("customIdInput").value.trim();
+  serieCustomUrl = document.getElementById("customUrlInput").value.trim();
+  alert("✅ Datos guardados");
+}
+
+function showEpisodes(tvId, seasonNumber, serieName) {
+  const url = `https://api.themoviedb.org/3/tv/${tvId}/season/${seasonNumber}?api_key=${apiKey}&language=es-ES`;
+  fetch(url)
+    .then(res => res.json())
+    .then(season => {
+      if (!season.episodes || season.episodes.length === 0) {
+        movieGrid.innerHTML = `<p>⚠️ Temporada "${season.name}" sin episodios aún.</p>`;
+        return;
+      }
+      movieGrid.innerHTML = `<h3>${serieName} - ${season.name}</h3>`;
+      season.episodes.forEach(ep => {
+        const epBtn = document.createElement("div");
+        epBtn.className = "episode-option";
+        epBtn.textContent = `${ep.episode_number}. ${ep.name}`;
+        epBtn.onclick = () => generateEpisodeCode(tvId, seasonNumber, ep.episode_number, serieName, ep);
+        movieGrid.appendChild(epBtn);
+      });
+    });
+}
+
+function generateEpisodeCode(tvId, seasonNumber, episodeNumber, serieName, episode) {
+  if (serieCustomId === "" || serieCustomUrl === "") {
+    alert("❌ Guarda un ID y URL antes de generar.");
+    return;
+  }
+
+  const selectedLang = document.getElementById("selectLang")?.value || "lat";
+  const still = episode.still_path ? imageBase + episode.still_path : "https://via.placeholder.com/1280x720?text=Sin+Imagen";
+
+  const htmlOutput = `
+<!-- Episodio: ${episode.name} - T${seasonNumber}E${episodeNumber} -->
+<!-- id-${serieCustomId},Episode -->
+<div class='post-body'>
+  <div data-post-type="episode" hidden>
+    <img src="${still}" />
+    <p id="tmdb-synopsis">${episode.overview || "Sin descripción"}</p>
+  </div>
+  <a name='more'></a>
+
+  <div 
+    data-player-backdrop="${backdropBase + (episode.still_path || "")}" 
+    data-episode-count="${episode.episode_number}"
+    data-season-number="${seasonNumber}"
+    data-serie-name="${serieName}"
+    data-serie-url="${serieCustomUrl}">
+  </div>
+
+  <header class="post-header">
+    <span class="post-header__title">${episode.name}</span>
+    <div class="post-header__meta">
+      <span class="ssn">${seasonNumber}</span>
+      <span class="num">${episode.episode_number}</span>
+    </div>
+  </header>
+
+  <div class="plyer-node" data-selected-lang="${selectedLang}"></div>
+  <script>
+    const _SV_LINKS = [
+      {
+        lang: "${selectedLang}",
+        name: "Vip",
+        quality: "HD",
+        url: "https://streaming.cinedom.pro/api/tv/${tvId}/${seasonNumber}/${episodeNumber}",
+        tagVideo: false
+      }
+    ]
+  </script>
+</div>
+`;
+
+  document.getElementById("htmlOutput").value = htmlOutput;
+  document.getElementById("postTitle").value = `${serieName} T${seasonNumber}E${episodeNumber}`;
+}
+
+searchBtn.addEventListener("click", () => {
+  const query = searchInput.value.trim();
+  if (!query) return;
+  const url = `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&language=es-ES&query=${encodeURIComponent(query)}`;
+  fetchSeries(url);
+});

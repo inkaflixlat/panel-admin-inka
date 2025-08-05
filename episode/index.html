@@ -2,38 +2,70 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Admin Panel TMDb + Blogger</title>
+  <title>Panel Admin TMDb + Blogger</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script src="https://accounts.google.com/gsi/client" async defer></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="panel">
+  <main class="panel" role="main" aria-label="Panel de administración TMDb Blogger">
     <h2>Panel Admin - Series TMDb a Blogger</h2>
     
-    <div id="login"></div>
-    <button id="logout" style="display:none;">Cerrar sesión</button>
+    <div id="login" aria-live="polite"></div>
+    <button id="logout" style="display:none;" aria-label="Cerrar sesión">Cerrar sesión</button>
     
-    <input type="text" id="searchInput" placeholder="Buscar serie" />
-    <button id="searchButton">Buscar</button>
-    <div id="movieGrid"></div>
-
-    <textarea id="htmlOutput" placeholder="HTML generado..." rows="10"></textarea>
-
-    <input type="text" id="postTitle" placeholder="Título del post" />
-    <input type="text" id="postLabels" placeholder="Etiquetas (separadas por coma)" />
-
-    <label for="selectLang">Selecciona idioma:</label>
-    <select id="selectLang">
-      <option value="lat">Audio Latino</option>
-      <option value="sub">Subtitulado</option>
-      <option value="es">Español</option>
-    </select>
-
-    <input type="text" id="blogId" placeholder="Blog ID de Blogger" value="3812927193244872888" />
-
-    <button id="publishPost">Publicar en Blogger</button>
-  </div>
+    <section class="search-container" aria-label="Buscador de series">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Buscar serie"
+        aria-describedby="searchButton"
+      />
+      <button id="searchButton" aria-label="Buscar serie">Buscar</button>
+    </section>
+    
+    <section id="movieGrid" aria-live="polite" aria-label="Resultados de series"></section>
+    
+    <textarea
+      id="htmlOutput"
+      placeholder="HTML generado..."
+      rows="8"
+      aria-label="HTML generado"
+      readonly
+      tabindex="-1"
+    ></textarea>
+    
+    <form class="form-post" aria-label="Formulario de publicación en Blogger" onsubmit="return false;">
+      <input
+        type="text"
+        id="postTitle"
+        placeholder="Título del post"
+        aria-required="true"
+        required
+      />
+      <input
+        type="text"
+        id="postLabels"
+        placeholder="Etiquetas (separadas por coma)"
+        aria-required="false"
+      />
+      <label for="selectLang">Selecciona idioma:</label>
+      <select id="selectLang" aria-required="true" required>
+        <option value="lat">Audio Latino</option>
+        <option value="sub">Subtitulado</option>
+        <option value="es">Español</option>
+      </select>
+      <input
+        type="text"
+        id="blogId"
+        placeholder="Blog ID de Blogger"
+        value="3812927193244872888"
+        aria-required="true"
+        required
+      />
+      <button id="publishPost" type="submit">Publicar en Blogger</button>
+    </form>
+  </main>
 
   <script src="auth.js"></script>
   <script src="blogger.js"></script>

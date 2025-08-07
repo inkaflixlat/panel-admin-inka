@@ -15,7 +15,6 @@ searchBtn.addEventListener("click", () => {
     return;
   }
 
-  // Detectar si es número (ID) o texto (búsqueda por título)
   if (/^\d+$/.test(query)) {
     fetchMovieById(query);
   } else {
@@ -47,23 +46,24 @@ function fetchMovieByTitle(title) {
 function generateHtml(movie) {
   const year = movie.release_date ? movie.release_date.split("-")[0] : "N/A";
   const genres = movie.genres ? movie.genres.map(g => g.name).join(", ") : "N/A";
-  const customId = customIdInput.value.trim();
 
-  if (!customId) {
-    alert("Por favor ingresa un Custom ID para la URL de streaming.");
-    return;
+  // Autocompletar Custom ID si está vacío
+  if (!customIdInput.value.trim()) {
+    customIdInput.value = movie.id;
   }
+  const customId = customIdInput.value.trim();
 
   const html = `
 <!-- ${movie.title} -->
-<!-- ${genres},Movie,${year} -->
-
+<!-- ${genres},Movie,${year},Español -->
+  
+<!-- This generator was created by Plantillas CJ y Plantillas JMA -->
 <!-- Post type -->
 <div data-post-type="movie" hidden>
   <img src="${imageBase + movie.poster_path}" />
   <p id="tmdb-synopsis">${movie.overview}</p>
 </div>
-
+<!-- This generator was created by Plantillas CJ y Plantillas JMA -->
 <div class="headline is-small mb-4">
   <h2 class="headline__title">Información</h2>
 </div>
@@ -79,7 +79,7 @@ function generateHtml(movie) {
   <li><span>Estado</span> ${movie.status}</li>
   <li><span>Rating TMDB</span> ${movie.vote_average}</li>
 </ul>
-
+<!-- This generator was created by Plantillas CJ y Plantillas JMA -->
 <div class="plyer-node" data-selected-lang="lat"></div>
 <script>
   const _SV_LINKS = [

@@ -4,159 +4,47 @@
   <meta charset="UTF-8" />
   <title>Panel Admin InkaFlixLat Movie</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
   <script src="https://accounts.google.com/gsi/client" async defer></script>
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
-  <style>
-    /* RESET */
-* {
-  margin: 0; padding: 0; box-sizing: border-box;
-}
-
-/* BODY Y FONDO */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #121212;
-  color: #fff;
-  padding: 20px;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-/* HEADER */
-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-header h1 {
-  font-size: 2rem;
-  color: #3a8ee6; /* azul */
-  text-shadow: 0 0 8px #3a8ee6a1;
-}
-
-/* MAIN CONTENEDOR */
-main {
-  width: 100%;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-/* SECCIONES FORM Y PREVIEW */
-.form-section, .preview-section {
-  background-color: #1e1e1e;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px #3a8ee64d;
-}
-
-/* LABELS */
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 700;
-  color: #3a8ee6;
-  font-size: 1rem;
-}
-
-/* INPUTS Y TEXTAREAS */
-input[type="text"], textarea {
-  width: 100%;
-  padding: 12px 15px;
-  background-color: #2b2b2b;
-  border: 1.5px solid #3a8ee6;
-  border-radius: 8px;
-  font-size: 1rem;
-  color: #3a8ee6;
-  font-family: monospace;
-  outline-offset: 2px;
-  transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus, textarea:focus {
-  border-color: #2f7ee6;
-  box-shadow: 0 0 8px #2f7ee6cc;
-  color: #2f7ee6;
-  background-color: #232323;
-}
-
-textarea {
-  height: 180px;
-  resize: vertical;
-  line-height: 1.4;
-}
-
-/* BOTONES */
-button {
-  margin-top: 20px;
-  width: 100%;
-  padding: 14px;
-  background-color: #3a8ee6;
-  border: none;
-  border-radius: 8px;
-  color: #000;
-  font-weight: 700;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0 0 12px #3a8ee6bb;
-}
-
-button:hover {
-  background-color: #2f7ee6;
-  box-shadow: 0 0 16px #2f7ee6cc;
-}
-
-/* OCULTAR ELEMENTOS */
-.hidden {
-  display: none !important;
-}
-
-/* FOOTER */
-footer {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  width: 100%;
-  max-width: 800px;
-}
-
-footer button {
-  width: auto;
-  padding: 12px 28px;
-  font-size: 1rem;
-  box-shadow: 0 0 12px #3a8ee6bb;
-}
-
-footer button:hover {
-  box-shadow: 0 0 16px #2f7ee6cc;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  main {
-    padding: 0 10px;
-  }
-}
-  </style>
 </head>
 <body>
 
   <header>
-    <h1>Panel Admin InkaFlixLat Movie</h1>
+    <h1>INKAFLIX</h1>
   </header>
 
   <main>
-    <section class="form-section">
-      <label for="searchInput">Buscar película por título o ID TMDb:</label>
-      <input type="text" id="searchInput" placeholder="Ejemplo: 550 o Fight Club" />
-      <button id="searchButton">Buscar película</button>
 
+    <!-- Panel tipo filtro de películas -->
+    <section class="inkaflix-search">
+      <div class="top-nav">
+        <button class="nav-btn active" data-src="movie">Filmes</button>
+        <button class="nav-btn" data-src="tv">Episódios</button>
+      </div>
+
+      <select id="yearSelect">
+        <option>Año</option>
+      </select>
+
+      <select id="sortSelect">
+        <option>Popularidad</option>
+      </select>
+
+      <select id="genreSelect">
+        <option>Género</option>
+      </select>
+
+      <button class="discover-btn" id="discoverBtn">Discover</button>
+
+      <div class="search-wrapper">
+        <input type="text" placeholder="Buscar por título o ID" id="searchInput" />
+        <button id="searchButton" class="search-btn">Buscar</button>
+      </div>
+    </section>
+
+    <!-- Formulario de publicación -->
+    <section class="form-section">
       <label for="customIdInput">Custom ID para URL streaming:</label>
       <input type="text" id="customIdInput" placeholder="Ejemplo: 6395779005522593699" />
 
@@ -170,23 +58,31 @@ footer button:hover {
       <input type="text" id="blogId" value="3812927193244872888" />
     </section>
 
+    <!-- Vista previa HTML -->
     <section class="preview-section">
       <h2>HTML generado:</h2>
       <textarea id="htmlOutput" placeholder="Aquí aparecerá el código generado..." readonly></textarea>
       <button id="publishPost">Publicar en Blogger</button>
     </section>
+
   </main>
 
+  <!-- Footer con login -->
   <footer>
-    <div id="login">
-      <button id="loginButton">Iniciar sesión con Google</button>
-    </div>
-    <button id="logout" class="hidden">Cerrar sesión</button>
+    <div id="login"></div>
+    <button id="logout" style="display:none;">Cerrar sesión</button>
   </footer>
+
+  <!-- Footer adicional tipo app -->
+  <div class="whatsapp-footer">
+    <span>WhatsApp: +52 56 4617 5570</span>
+    <span>Best series generator</span>
+  </div>
 
   <!-- Scripts -->
   <script src="p-auth.js"></script>
   <script src="p-blogger.js"></script>
   <script src="p-main.js"></script>
+  <script src="p-search.js"></script>
 </body>
 </html>
